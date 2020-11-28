@@ -1,4 +1,4 @@
-import style from "styled-components";
+import styled from "styled-components";
 
 interface TitleProps {
     readonly isActive: boolean;
@@ -8,7 +8,7 @@ interface Ul {
     readonly size: string;
 }
 
-export const Ul = style.ul.attrs((props: Ul)=> ({
+export const Ul = styled.ul.attrs((props: Ul)=> ({
     type: "text",
     size: props.size || "1em",
   })) `
@@ -16,7 +16,7 @@ export const Ul = style.ul.attrs((props: Ul)=> ({
     font-size: ${props => props.size};
 `;
 
-export const Toggleable = style.li<TitleProps> `
+export const Toggleable = styled.li<TitleProps> `
     color: ${props => props.isActive ? "grey" : "red"};
     cursor: pointer; 
     
