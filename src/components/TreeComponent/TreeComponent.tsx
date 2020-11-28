@@ -1,6 +1,6 @@
 import React from 'react';
-import './TreeComponent.scss';
 import { Folder } from './Folder';
+import { Ul } from "./TreeComponentStyle";
 
 interface treeObject {
     name: string,
@@ -10,7 +10,7 @@ interface treeObject {
 const TreeComponent = ({ file }: {file: treeObject[]}) => {
 
     return (
-        <ul className='text-left'>
+        <Ul className='text-left' size="30px">
             {file.map((value: treeObject, idx: number) => (!!value.childrens) ?
                 <Folder name={value.name}>
                     <TreeComponent file={value.childrens} />
@@ -20,7 +20,7 @@ const TreeComponent = ({ file }: {file: treeObject[]}) => {
                     <li key={idx} >{value.name}</li>
                 </>
             )}
-        </ul>
+        </Ul>
     )
 }
 

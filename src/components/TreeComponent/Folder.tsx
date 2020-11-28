@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Toggleable } from "./TreeComponentStyle";
 
 interface Props {
     name: string,
@@ -10,9 +11,9 @@ export const Folder = ({ name, children }: Props) => {
 
     return (
         <>
-            <li key={name} className='toggleable' onClick={() => setIsVisible(!isVisible)}>
+            <Toggleable isActive={isVisible} key={name} onClick={() => setIsVisible(!isVisible)}>
                 {name}
-            </li>
+            </Toggleable>
             {isVisible && <>{children}</>}
         </>
     )
