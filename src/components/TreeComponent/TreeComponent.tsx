@@ -1,26 +1,31 @@
 import React from 'react';
 import { Folder } from './Folder';
-import { Ul } from "./TreeComponentStyle";
+import { ThemeProvider } from 'styled-components'
+import { List, NotToggleable} from "./TreeComponentStyle";
+import theme from './theme';
 
 interface treeObject {
     name: string,
     childrens?: treeObject[]
 }
 
-const TreeComponent = ({ file }: {file: treeObject[]}) => {
+const TreeComponent = ({ file, size, color, bgColor, darkMode, iconStyle}: 
+    {file: treeObject[], size?: string, color?: string, bgColor?:string, darkMode?: boolean, iconStyle?: string}) => { 
 
     return (
-        <Ul className='text-left' size="30px">
-            {file.map((value: treeObject, idx: number) => (!!value.childrens) ?
-                <Folder name={value.name}>
-                    <TreeComponent file={value.childrens} />
-                </Folder>
-                :
-                <>
-                    <li key={idx} >{value.name}</li>
-                </>
-            )}
-        </Ul>
+        <ThemeProvider theme={darkMode ? theme.darkMode : theme.primary}>
+            <List size={size} color={color} bgColor={bgColor}>
+                {file.map((value: treeObject, idx: number) => (!!value.childrens) ?
+                    <Folder color={color} name={value.name} iconStyle={iconStyle}>
+                        <TreeComponent file={value.childrens} size={size} color={color} bgColor={bgColor} darkMode={darkMode} iconStyle={iconStyle}/>
+                    </Folder>
+                    :
+                    <>
+                        <NotToggleable key={idx} >{value.name}</NotToggleable>
+                    </>
+                )}
+            </List>
+        </ThemeProvider>
     )
 }
 
