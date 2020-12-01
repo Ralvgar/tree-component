@@ -12,13 +12,13 @@ interface Props {
 
 export const Folder = ({ name, children, color, iconStyle }: Props) => {
     const [isVisible, setIsVisible] = useState(false);
-
     return (
         <>
-            <Toggleable isActive={isVisible} color={color} key={name} onClick={() => setIsVisible(!isVisible)}>
+            <Toggleable color={color} key={name} onClick={() => setIsVisible(!isVisible)}>
                <FontAwesomeIcon icon={isVisible ? getIconFromIconName(iconStyle)[0] : getIconFromIconName(iconStyle)[1]} size="xs" /> {" " + name}
+               {isVisible && <>{children}</>}
             </Toggleable>
-            {isVisible && <>{children}</>}
+            
         </>
     )
 

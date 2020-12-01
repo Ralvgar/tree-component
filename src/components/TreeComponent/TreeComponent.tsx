@@ -14,17 +14,16 @@ interface Props { file: treeObject[], size?: string, color?: string, bgColor?: s
 
 
 const TreeComponent = ({ file, size, color, bgColor, darkMode, iconStyle }: Props) => {
-
+    
     return (
         <ThemeProvider theme={darkMode ? theme.darkMode : theme.primary}>
-            <li>hola</li>
             <List size={size} color={color} bgColor={bgColor} >
-                {file.map((value: treeObject, idx: number) => (!!value.childrens) ?
+                {file.map((value: treeObject) => (!!value.childrens) ?
                     <Folder color={color} name={value.name} iconStyle={iconStyle}>
                         <TreeComponent file={value.childrens} size={size} color={color} bgColor={bgColor} darkMode={darkMode} iconStyle={iconStyle} />
                     </Folder>
                     :
-                    <NotToggleable key={Math.floor(Math.random() * 1000)} >{value.name}</NotToggleable>
+                    <NotToggleable key={value.name} >{value.name}</NotToggleable>
                 )}
             </List>
         </ThemeProvider>

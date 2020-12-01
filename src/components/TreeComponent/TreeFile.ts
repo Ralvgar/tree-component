@@ -15,7 +15,15 @@ export const treeFile = [
                 name: "Second-Second",
                 childrens: [
                     { name: "Second-Second-First" },
-                    { name: "Second-Second-Second" }
+                    { name: "Second-Second-Second" },
+                    {
+                        name: "First",
+                        childrens: [
+                            { name: "First-First" },
+                            { name: "First-Second" },
+                            { name: "First-Third" }
+                        ]
+                    },
                 ]
             },
             { name: "Second-Third" },
