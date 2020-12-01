@@ -15,7 +15,7 @@ export const Folder = ({ name, children, color, iconStyle }: Props) => {
 
     return (
         <>
-            <Toggleable isActive={isVisible} color={color} key={Math.floor(Math.random() * 1000)} onClick={() => setIsVisible(!isVisible)}>
+            <Toggleable isActive={isVisible} color={color} key={name} onClick={() => setIsVisible(!isVisible)}>
                <FontAwesomeIcon icon={isVisible ? getIconFromIconName(iconStyle)[0] : getIconFromIconName(iconStyle)[1]} size="xs" /> {" " + name}
             </Toggleable>
             {isVisible && <>{children}</>}

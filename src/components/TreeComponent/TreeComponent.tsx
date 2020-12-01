@@ -3,17 +3,21 @@ import { Folder } from './Folder';
 import { ThemeProvider } from 'styled-components'
 import { List, NotToggleable } from "./TreeComponentStyle";
 import theme from './theme';
+import propTypes from 'prop-types';
 
 interface treeObject {
     name: string,
     childrens?: treeObject[]
 }
 
-const TreeComponent = ({ file, size, color, bgColor, darkMode, iconStyle }:
-    { file: treeObject[], size?: string, color?: string, bgColor?: string, darkMode?: boolean, iconStyle?: string }) => {
+interface Props { file: treeObject[], size?: string, color?: string, bgColor?: string, darkMode?: boolean, iconStyle?: string }
+
+
+const TreeComponent = ({ file, size, color, bgColor, darkMode, iconStyle }: Props) => {
 
     return (
         <ThemeProvider theme={darkMode ? theme.darkMode : theme.primary}>
+            <li>hola</li>
             <List size={size} color={color} bgColor={bgColor} >
                 {file.map((value: treeObject, idx: number) => (!!value.childrens) ?
                     <Folder color={color} name={value.name} iconStyle={iconStyle}>
@@ -26,5 +30,9 @@ const TreeComponent = ({ file, size, color, bgColor, darkMode, iconStyle }:
         </ThemeProvider>
     )
 }
+
+TreeComponent.propTypes = {
+    file: propTypes.array.isRequired,
+};
 
 export default TreeComponent
