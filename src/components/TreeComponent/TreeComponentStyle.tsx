@@ -10,8 +10,6 @@ export const List = styled.ul.attrs((props: { size: string, color?: string, bgCo
   bgColor: props.bgColor || props.theme.backgroundColor,
   color: props.color || props.theme.baseColor,
 }))`
-    // this color here is to show how styled-components solve the specifity problems.
-    /* color: red; */
     background-color:  ${props => props.bgColor};
     color:   ${props => props.color};
     font-size: ${props => props.size};

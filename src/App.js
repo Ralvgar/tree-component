@@ -16,7 +16,7 @@ props:
 function App() {
   return (
     <div className="App">
-      <TreeComponent size={"2rem"} file={treeFile} />
+      <TreeComponent size={"2rem"} file={treeFile} darkMode />
     </div>
   );
 }
