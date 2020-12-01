@@ -19,6 +19,8 @@ export const List = styled.ul.attrs((props: { size: string, color?: string, bgCo
     // using the prop inself to change our css. (this is only to show how it works)
     ${(props: { green?: boolean }) => props.green && css`
         color: #28c023;
+        text-align: center;
+        font-family: verdana;
     `}
     
 `;
@@ -32,9 +34,7 @@ export const Toggleable = styled(NotToggleable)`
     cursor: pointer;
     // pasing boolean to add more css to this component. (this is only to show how it works)
     transition: ease 0.25s all;
-    ${(props: {isActive: boolean}) => props.isActive && css` 
-    font-size: 1.1em;
-    `}
+    font-size: ${(props: {isActive: boolean}) => props.isActive && "1.1em"};
     // using hover in this component. (this is only to show how it works)
     :hover {
       font-size: 1.1em;
