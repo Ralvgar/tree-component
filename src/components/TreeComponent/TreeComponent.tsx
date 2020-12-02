@@ -17,10 +17,10 @@ const TreeComponent = ({ file, size, color, bgColor, darkMode, iconStyle }: Prop
     
     return (
         <ThemeProvider theme={darkMode ? theme.darkMode : theme.primary}>
-            <List size={size} color={color} bgColor={bgColor} >
+            <List size={size} color={color} bgColor={bgColor}>
                 {file.map((value: treeObject) => (!!value.childrens) ?
                     <Folder color={color} name={value.name} iconStyle={iconStyle}>
-                        <TreeComponent file={value.childrens} size={size} color={color} bgColor={bgColor} darkMode={darkMode} iconStyle={iconStyle} />
+                        <TreeComponent file={value.childrens} size={size} color={color} bgColor={bgColor} darkMode={darkMode} iconStyle={iconStyle}/>
                     </Folder>
                     :
                     <NotToggleable key={value.name} >{value.name}</NotToggleable>

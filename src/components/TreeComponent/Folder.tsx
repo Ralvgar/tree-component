@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Toggleable } from "./TreeComponentStyle";
+import { Toggleable, NotToggleable } from "./TreeComponentStyle";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown, faCaretRight, faPlus, faMinus, faAngleRight, faAngleDown, faFolder, faFolderOpen} from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown, faCaretRight, faPlus, faMinus, faAngleRight, faAngleDown, faFolder, faFolderOpen } from '@fortawesome/free-solid-svg-icons'
 
 interface Props {
     name: string,
@@ -13,18 +13,16 @@ interface Props {
 export const Folder = ({ name, children, color, iconStyle }: Props) => {
     const [isVisible, setIsVisible] = useState(false);
     return (
-        <>
-            <Toggleable color={color} key={name} onClick={() => setIsVisible(!isVisible)}>
-               <FontAwesomeIcon icon={isVisible ? getIconFromIconName(iconStyle)[0] : getIconFromIconName(iconStyle)[1]} size="xs" /> {" " + name}
-               {isVisible && <>{children}</>}
+        <NotToggleable color={color} key={name}>
+            <Toggleable as="span" onClick={() => setIsVisible(!isVisible)} >
+                <FontAwesomeIcon icon={isVisible ? getIconFromIconName(iconStyle)[0] : getIconFromIconName(iconStyle)[1]} size="xs" />{" " + name}
             </Toggleable>
-            
-        </>
+            {isVisible && <>{children}</>}
+        </NotToggleable>
     )
-
 }
 
-const getIconFromIconName = (iconName:string | undefined) => {
+const getIconFromIconName = (iconName: string | undefined) => {
     switch (iconName) {
         case "plus": return [faMinus, faPlus];
         case "angle": return [faAngleDown, faAngleRight];
