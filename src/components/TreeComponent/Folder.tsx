@@ -22,7 +22,7 @@ export const Folder = ({ name, children, color, iconStyle }: Props) => {
     )
 }
 
-const getIconFromIconName = (iconName: string | undefined) => {
+export const getIconFromIconName = (iconName: string | undefined) => {
     switch (iconName) {
         case "plus": return [faMinus, faPlus];
         case "angle": return [faAngleDown, faAngleRight];
