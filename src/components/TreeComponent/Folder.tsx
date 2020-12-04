@@ -6,14 +6,13 @@ import { faCaretDown, faCaretRight, faPlus, faMinus, faAngleRight, faAngleDown, 
 interface Props {
     name: string,
     children: JSX.Element,
-    iconStyle?: string,
-    color?: string
+    iconStyle?: string
 }
 
-export const Folder = ({ name, children, color, iconStyle }: Props) => {
+export const Folder = ({ name, children, iconStyle }: Props) => {
     const [isVisible, setIsVisible] = useState(false);
     return (
-        <NotToggleable color={color} key={name}>
+        <NotToggleable key={name}>
             <Toggleable as="span" onClick={() => setIsVisible(!isVisible)} >
                 <FontAwesomeIcon icon={isVisible ? getIconFromIconName(iconStyle)[0] : getIconFromIconName(iconStyle)[1]} size="xs" />{" " + name}
             </Toggleable>
