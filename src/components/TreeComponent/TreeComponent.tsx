@@ -14,7 +14,7 @@ interface Props { file: treeObject[], size?: string, color?: string, bgColor?: s
 
 
 const TreeComponent = ({ file, size, color, bgColor, darkMode, iconStyle }: Props) => {
-    
+
     return (
         <ThemeProvider theme={darkMode ? theme.darkMode : theme.primary}>
             <List size={size} color={color} bgColor={bgColor}>

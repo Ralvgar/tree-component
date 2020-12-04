@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { getIconFromIconName } from './Folder';
 import TreeComponent from './TreeComponent';
 import { treeFile } from './TreeFile';
@@ -48,7 +48,7 @@ describe("Screen tests", () => {
   // document, que tiene dentro? de donde sale? document es el DOM de treecomponent
 
 
-  it('should change to default icon when passing through a prop', () => {
+  it('should change to default icon when passing through no prop', () => {
     render(<TreeComponent file={treeFile} />);
     expect(document.querySelector('.fa-caret-right')).toBeInTheDocument();
   });
