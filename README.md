@@ -4,7 +4,7 @@ This project was made by Roberto Álvarez García as a Mallorca Bootcamp project
 
 ## Documentation
 
-This is a simple tree component for react, you should call it as <TreeComponent /> inside your JSX and accepts two props.
+This is a simple tree component for react, you should call it as ```html <TreeComponent /> ``` inside your JSX and accepts two props.
 
 ### `file` *Obligatory*
 
