@@ -52,8 +52,11 @@ Key | Description
 In iconStyle you can change with icon you want before each folder of your tree component, it has four different options:
 
 **default:** if you dont use this prop you'll get a solid arrow;
+
 **angle:** this prop change our icon to an angle arrow: ">";
+
 **folder:** as the name suggests, a folder.
+
 **plus:** it uses plus and minus simbols.
 
 
