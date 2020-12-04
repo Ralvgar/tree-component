@@ -57,4 +57,4 @@ In iconStyle you can change with icon you want before each folder of your tree c
 **plus:** it uses plus and minus simbols.
 
 
-Thank you for visit my component, i hope you enjoy it.
+Thank you for visit my component, I hope you enjoy it.
