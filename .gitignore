@@ -18,7 +18,6 @@
 .env.test.local
 .env.production.local
 .eslintcache
-.npmrc
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

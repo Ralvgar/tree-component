@@ -1,5 +1,5 @@
 {
-  "name": "react-simple-tree-component",
+  "name": "@ralvgar/react-simple-tree-component",
   "author": "Roberto Álvarez García",
   "version": "1.0.0",
   "description": "A simple tree component for react.",
@@ -10,7 +10,6 @@
     "README.md"
   ],
   "repository": {
-    "type": "git",
     "url": "git://github.com/Ralvgar/tree-component.git"
   },
   "dependencies": {},
