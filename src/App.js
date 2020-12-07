@@ -1,6 +1,6 @@
 import './App.css';
 import TreeComponent from './components/TreeComponent/TreeComponent';
-import { treeFile } from './components/TreeComponent/TreeFile';
+import { treeFile } from './TreeFile';
 
 /* 
 props:  

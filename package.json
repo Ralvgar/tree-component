@@ -1,36 +1,40 @@
 {
-  "name": "tree-component",
-  "version": "0.1.0",
-  "private": true,
+  "name": "react-simple-tree-component",
+  "author": "Roberto Álvarez García",
+  "version": "1.0.0",
+  "description": "A simple tree component for react.",
+  "main": "dist/TreeComponent.js",
+  "private": false,
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ralvgar/tree-component.git"
+  },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@fortawesome/react-fontawesome": "^0.1.13",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/styled-components": "^5.1.4",
-    "bootstrap": "^4.5.3",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "styled-components": "^5.2.1",
-    "typescript": "^4.1.2",
-    "web-vitals": "^0.2.4"
+    
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clean": "rimraf dist",
+    "prepare-compile": "npm run clean && cross-env NODE_ENV=production babel src/components --out-dir dist --extensions \".tsx\" ",
+    "copy": "cp README.md dist/",
+    "compile": "npm run prepare-compile && npm run copy"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/Ralvgar"
   },
   "browserslist": {
     "production": [
@@ -45,7 +49,29 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "@babel/preset-typescript": "^7.12.7",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.13",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
     "@types/react": "^17.0.0",
-    "sass": "^1.29.0"
+    "@types/styled-components": "^5.1.4",
+    "bootstrap": "^4.5.3",
+    "cross-env": "^7.0.3",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "sass": "^1.29.0",
+    "styled-components": "^5.2.1",
+    "typescript": "^4.1.2",
+    "web-vitals": "^0.2.4"
   }
 }
