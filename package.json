@@ -13,9 +13,7 @@
     "type": "git",
     "url": "https://github.com/Ralvgar/tree-component.git"
   },
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -34,7 +32,7 @@
     ]
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/Ralvgar"
+    "registry": "https://npm.pkg.github.com"
   },
   "browserslist": {
     "production": [
