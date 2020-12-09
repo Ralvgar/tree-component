@@ -1,7 +1,7 @@
 {
   "name": "@ralvgar/react-simple-tree-component",
   "author": "Roberto Álvarez García",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple tree component for react.",
   "main": "dist/TreeComponent.js",
   "private": false,
