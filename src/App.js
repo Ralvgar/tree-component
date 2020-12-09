@@ -10,7 +10,7 @@ props:
 
 function App() {
   return (
-    <div className="App background-info" >
+    <div className="App" >
       <TreeComponent file={treeFile} />
     </div>
   );
