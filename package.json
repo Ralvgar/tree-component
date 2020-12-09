@@ -1,7 +1,7 @@
 {
   "name": "@ralvgar/react-simple-tree-component",
   "author": "Roberto Álvarez García",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple tree component for react.",
   "main": "dist/TreeComponent.js",
   "private": false,
@@ -20,9 +20,7 @@
     "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache",
     "eject": "react-scripts eject",
     "clean": "rimraf dist",
-    "prepare-compile": "npm run clean && cross-env NODE_ENV=production babel src/components/TreeComponent --out-dir dist --extensions \".tsx\" ",
-    "copy": "cp README.md dist/",
-    "compile": "npm run prepare-compile && npm run copy"
+    "compile": "npm run clean && cross-env NODE_ENV=production babel src/components/TreeComponent --out-dir dist --extensions \".tsx\" "
   },
   "eslintConfig": {
     "extends": [
