@@ -3,7 +3,7 @@ import { Toggleable, NotToggleable } from "./TreeComponentStyle";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown, faCaretRight, faPlus, faMinus, faAngleRight, faAngleDown, faFolder, faFolderOpen } from '@fortawesome/free-solid-svg-icons'
 
-interface Props {
+export interface Props {
     name: string,
     children: JSX.Element,
     iconStyle?: string

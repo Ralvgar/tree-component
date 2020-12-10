@@ -1,1 +1,0 @@
-declare module '@ralvgar/react-simple-tree-component';

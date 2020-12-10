@@ -3,7 +3,7 @@ import { Folder } from './Folder';
 import { List, NotToggleable } from "./TreeComponentStyle";
 import propTypes from 'prop-types';
 
-interface treeObject {
+export interface treeObject {
     name: string,
     childrens?: treeObject[]
 }
