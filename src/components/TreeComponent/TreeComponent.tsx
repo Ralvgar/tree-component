@@ -1,33 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Folder } from './Folder';
 import { List, NotToggleable } from "./TreeComponentStyle";
 import propTypes from 'prop-types';
 
-export interface treeObject {
+export interface TreeObject {
     name: string,
-    childrens?: treeObject[]
+    childrens?: TreeObject[]
 }
 
-interface Props { file: treeObject[], iconStyle?: string }
+interface Props { tree: TreeObject[], iconStyle?: string }
 
+const TreeComponent = ({ tree, iconStyle }: Props) => {
 
-const TreeComponent = ({ file, iconStyle}: Props) => {
+    const [openItems, setOpenItems] = useState<TreeObject[]>([])
 
     return (
-            <List >
-                {file.map((value: treeObject) => (!!value.childrens) ?
-                    <Folder name={value.name} iconStyle={iconStyle}>
-                        <TreeComponent file={value.childrens} iconStyle={iconStyle}/>
-                    </Folder>
-                    :
-                    <NotToggleable key={value.name} >{value.name}</NotToggleable>
-                )}
-            </List>
+        <List>
+            {tree.map((value: TreeObject) => (
+                <>
+                    <li>
+                        <span onClick={() => openItems.includes(value) ? }>{value.name}</span>
+                        {value.childrens && openItems.includes(value) ? <TreeComponent tree={value.childrens}></TreeComponent> : null}
+                    </li>
+                    
+                </>
+            ))}
+        </List>
     )
 }
 
 TreeComponent.propTypes = {
-    file: propTypes.array.isRequired,
+    tree: propTypes.array.isRequired,
 };
 
 export default TreeComponent

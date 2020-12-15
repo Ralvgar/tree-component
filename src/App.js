@@ -11,7 +11,7 @@ props:
 function App() {
   return (
     <div className="App" >
-      <TreeComponent file={treeFile} />
+      <TreeComponent tree={treeFile} />
     </div>
   );
 }
