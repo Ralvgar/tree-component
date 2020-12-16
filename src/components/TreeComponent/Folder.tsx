@@ -13,7 +13,7 @@ export const Folder = ({ name, children, iconStyle }: Props) => {
     const [isVisible, setIsVisible] = useState(false);
     return (
         <NotToggleable key={name}>
-            <Toggleable as="span" onClick={() => setIsVisible(!isVisible)} >
+            <Toggleable  key={name} as="span" onClick={() => setIsVisible(!isVisible)}>
                 <FontAwesomeIcon icon={isVisible ? getIconFromIconName(iconStyle)[0] : getIconFromIconName(iconStyle)[1]} size="xs" />{" " + name}
             </Toggleable>
             {isVisible && <>{children}</>}

@@ -8,26 +8,26 @@ export interface treeObject {
     childrens?: treeObject[]
 }
 
-interface Props { file: treeObject[], iconStyle?: string }
+interface Props { tree: treeObject[], iconStyle?: string }
 
 
-const TreeComponent = ({ file, iconStyle}: Props) => {
+const TreeComponent = ({ tree, iconStyle}: Props) => {
 
     return (
-            <List >
-                {file.map((value: treeObject) => (!!value.childrens) ?
-                    <Folder name={value.name} iconStyle={iconStyle}>
-                        <TreeComponent file={value.childrens} iconStyle={iconStyle}/>
+            <List>
+                {tree.map((treeItem: treeObject, idx) => (!!treeItem.childrens) ?
+                    <Folder name={treeItem.name} iconStyle={iconStyle}>
+                        <TreeComponent tree={treeItem.childrens} iconStyle={iconStyle}/>
                     </Folder>
                     :
-                    <NotToggleable key={value.name} >{value.name}</NotToggleable>
+                    <NotToggleable key={treeItem.name + idx}>{treeItem.name}</NotToggleable>
                 )}
             </List>
     )
 }
 
 TreeComponent.propTypes = {
-    file: propTypes.array.isRequired,
+    tree: propTypes.array.isRequired,
 };
 
 export default TreeComponent
