@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Folder } from './Folder';
-import { List, NotToggleable } from "./TreeComponentStyle";
+import { List, NotToggleable, Toggleable } from "./TreeComponentStyle";
 import propTypes from 'prop-types';
 
 export interface TreeObject {
@@ -12,17 +12,22 @@ interface Props { tree: TreeObject[], iconStyle?: string }
 
 const TreeComponent = ({ tree, iconStyle }: Props) => {
 
-    const [openItems, setOpenItems] = useState<TreeObject[]>([])
+    const [openItems, setOpenItems] = useState<TreeObject[]>([]);
+
+    const removeItemFromOpenItems = (itemToRemove: TreeObject) => {
+        setOpenItems((state: TreeObject[]) => {
+            return state.filter(item => item !== itemToRemove);
+        })
+    }
 
     return (
         <List>
-            {tree.map((value: TreeObject) => (
+            {tree.map((treeItem: TreeObject) => (
                 <>
-                    <li>
-                        <span onClick={() => openItems.includes(value) ? }>{value.name}</span>
-                        {value.childrens && openItems.includes(value) ? <TreeComponent tree={value.childrens}></TreeComponent> : null}
-                    </li>
-                    
+                    <Toggleable>
+                        <span onClick={() => openItems.includes(treeItem) ? removeItemFromOpenItems(treeItem) : setOpenItems(state => [...state, treeItem])}>{treeItem.name}</span>
+                        {treeItem.childrens && openItems.includes(treeItem) ? <TreeComponent tree={treeItem.childrens}></TreeComponent> : null}
+                    </Toggleable>
                 </>
             ))}
         </List>
