@@ -8,9 +8,7 @@ import { faCaretDown, faCaretRight, faPlus, faMinus, faAngleRight, faAngleDown, 
 
 describe("Screen tests", () => {
   it('renders the first level elements', () => {
-    // whit this its not needed screen. in every line of code
     const { getByText } = render(<TreeComponent file={treeFile} />);
-    // in getByText .toBeInTheDocument() is not required and if you dont use any Using Matchers you also dont need expect()
     getByText("First");
     getByText("Second");
     getByText("Third");
@@ -42,11 +40,6 @@ describe("Screen tests", () => {
       }
     })
   });
-
-  // asegurarte de cuando se limpia el render. el render se limpia automaticamente despues de cada it, tambien se puede limpiar con el metodo cleanup() importado 
-  // de @testing-library/react'
-  // document, que tiene dentro? de donde sale? document es el DOM de treecomponent
-
 
   it('should change to default icon when passing through no prop', () => {
     render(<TreeComponent file={treeFile} />);
