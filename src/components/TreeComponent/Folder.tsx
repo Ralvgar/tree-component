@@ -16,13 +16,12 @@ export interface Props {
   name: string;
   children: JSX.Element;
   iconStyle?: string;
-  color?: string;
 }
 
-export const Folder = ({ name, children, color, iconStyle }: Props) => {
+export const Folder = ({ name, children, iconStyle }: Props) => {
   const [isVisible, setIsVisible] = useState(false);
   return (
-    <NotToggleable color={color} key={name}>
+    <NotToggleable key={name}>
       <Toggleable key={name} as="span" onClick={() => setIsVisible(!isVisible)}>
         <FontAwesomeIcon
           icon={
@@ -31,6 +30,8 @@ export const Folder = ({ name, children, color, iconStyle }: Props) => {
               : getIconFromIconName(iconStyle)[1]
           }
           size="xs"
+          listItem
+          transform="right-3 down-6"
         />
         {" " + name}
       </Toggleable>

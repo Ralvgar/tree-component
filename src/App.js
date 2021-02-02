@@ -1,6 +1,7 @@
 import "./App.css";
 import TreeComponent from "./components/TreeComponent/TreeComponent";
 import { treeFile } from "./TreeFile";
+import "./index.scss";
 
 /* 
 props:  
@@ -16,12 +17,7 @@ props:
 function App() {
   return (
     <div className="App">
-      <TreeComponent
-        tree={treeFile}
-        darkMode
-        size={"2rem"}
-        iconStyle={"folder"}
-      />
+      <TreeComponent tree={treeFile} size={"2rem"} iconStyle={"folder"} />
     </div>
   );
 }

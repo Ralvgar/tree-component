@@ -1,38 +1,35 @@
 export const treeFile = [
-    {
-        name: "First",
+  {
+    name: "src",
+    childrens: [
+      { name: "Folder.tsx" },
+      { name: "theme.ts" },
+      { name: "TreeComponent.tsx" },
+    ],
+  },
+  {
+    name: "pages",
+    childrens: [
+      { name: "app.tsx" },
+      {
+        name: "login",
+        childrens: [{ name: "index.module.scss" }, { name: "index.tsx" }],
+      },
+      { name: "index.tsx" },
+    ],
+  },
+  {
+    name: "services",
+    childrens: [
+      { name: "ApolloConnection.ts" },
+      {
+        name: "hooks",
         childrens: [
-            { name: "First-First" },
-            { name: "First-Second" },
-            { name: "First-Third" }
-        ]
-    },
-    {
-        name: "Second",
-        childrens: [
-            { name: "Second-First" },
-            {
-                name: "Second-Second",
-                childrens: [
-                    { name: "Second-Second-First" },
-                    { name: "Second-Second-Second" }
-                ]
-            },
-            { name: "Second-Third" },
-        ]
-    },
-    {
-        name: "Third",
-        childrens: [
-            { name: "Third-First" },
-            {
-                name: "Third-Second",
-                childrens: [
-                    { name: "Third-Second-First" },
-                    { name: "Third-Second-Second" }
-                ]
-            },
-            { name: "Third-Third" },
-        ]
-    }
-]
+          { name: "useStateWithLocalStorage.ts" },
+          { name: "useStateWithSessionStorage.ts" },
+        ],
+      },
+      { name: "SessionStorageService.ts" },
+    ],
+  },
+];
